@@ -3,7 +3,7 @@ const URL: &str = "https://github.com/RaishavHanspal/testPrivate.git";
 const PATH: &str = "D:/Workspace/misc/privateRepo";
 fn main() {
     println!("Hello, world!");
-    git_command(vec!["checkout", "-b", "test1"]);
+    git_command(PATH, URL, "checkout -b test1");
 }
 
 fn open_project(path: &str, url: &str, opts: Vec<&str>) {
@@ -35,6 +35,7 @@ fn set_local_directory(local_path: &Path, opts: Vec<&str>) {
     };
 }
 
-fn git_command(opts: Vec<&str>) {
-    open_project(PATH, URL, opts)
+fn git_command(path: &str, url: &str, command: &str) {
+    let opts: Vec<&str> = command.split(' ').collect();
+    open_project(path, url, opts)
 }
