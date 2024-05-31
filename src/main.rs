@@ -3,7 +3,7 @@ const URL: &str = "https://github.com/RaishavHanspal/testPrivate.git";
 const PATH: &str = "D:/Workspace/misc/privateRepo";
 fn main() {
     println!("Hello, world!");
-    git_command(PATH, URL, "checkout -b test1");
+    git_command(PATH, URL, "checkout -b test");
 }
 
 fn open_project(path: &str, url: &str, opts: Vec<&str>) {
